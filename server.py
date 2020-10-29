@@ -1,6 +1,9 @@
 """Server for movie ratings app."""
 
 from flask import Flask
+from flask_sqlalchemy import flask_sqlalchemy
+
+db = SQLAlchemy()
 
 app = Flask(__name__)
 

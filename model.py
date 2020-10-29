@@ -48,7 +48,7 @@ class Rating(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
 
     def __repr__(self):
-        return f'<Rating rating_id={self.rating_id} movie_id={self.movie_id} score={self.score} user_id={self.user_id}>'
+        return f'<Rating rating_id={self.rating_id} score={self.score} movie_id={self.movie_id} user_id={self.user_id}>'
 
 
 def connect_to_db(flask_app, db_uri='postgresql:///ratings', echo=True):

@@ -29,8 +29,29 @@ for movie in movie_data:
     # datetime object with datetime.strptime
     format = '%Y-%m-%d'
     release_date = datetime.strptime(movie['release_date'], format)
-    genre = "horror"
-    db_movie = crud.create_movie(movie['title'], movie['overview'], movie['poster_path'], release_date, genre)
+    genre = None
+
+    db_movie = crud.create_movie(movie['title'], movie['overview'], release_date, movie['poster_path'], genre)
     
     # TODO: create a movie here and append it to movies_in_db
     movies_in_db.append(db_movie)
+
+list_of_all_ratings_created = []
+for n in range(10):
+    email = f'user{n}@test.com'  # Voila! A unique email!
+    password = f'test{n}{n}'
+    name = 'test user'
+
+    # user = User(email=email, password=password, name=name)
+    user = crud.create_user(email=email, password=password, name=name)
+
+    #def create_rating(score, movie, user):
+
+    score = randint(1, 6)
+    rand_movie = choice(movies_in_db)
+
+    list_of_all_ratings_created.append(crud.create_rating(score, rand_movie, user))
+    print ("Hi, I am working in loop", list_of_all_ratings_created)
+print ("Hi, I am working outta loop", list_of_all_ratings_created[0])
+
+    

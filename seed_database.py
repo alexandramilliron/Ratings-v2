@@ -36,22 +36,18 @@ for movie in movie_data:
     # TODO: create a movie here and append it to movies_in_db
     movies_in_db.append(db_movie)
 
+
 list_of_all_ratings_created = []
 for n in range(10):
     email = f'user{n}@test.com'  # Voila! A unique email!
     password = f'test{n}{n}'
-    name = 'test user'
+    name = 'Test User'
 
-    # user = User(email=email, password=password, name=name)
     user = crud.create_user(email=email, password=password, name=name)
 
-    #def create_rating(score, movie, user):
+    for i in range (10):
+        score = randint(1, 5)
+        rand_movie = choice(movies_in_db)
 
-    score = randint(1, 6)
-    rand_movie = choice(movies_in_db)
+        crud.create_rating(score, rand_movie, user)
 
-    list_of_all_ratings_created.append(crud.create_rating(score, rand_movie, user))
-    print ("Hi, I am working in loop", list_of_all_ratings_created)
-print ("Hi, I am working outta loop", list_of_all_ratings_created[0])
-
-    

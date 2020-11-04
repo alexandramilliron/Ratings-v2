@@ -1,6 +1,5 @@
 """Server for movie ratings app."""
 
-from flask import Flask
 from flask import (Flask, render_template, request, flash, session,
                    redirect)
 from model import connect_to_db
@@ -36,6 +35,7 @@ def show_movie(movie_id):
     movie = crud.get_movie_by_id(movie_id)
 
     return render_template('movie_details.html', movie=movie)
+
 
 
 

@@ -38,7 +38,7 @@ def get_movie_by_id(movie_id):
 def create_rating(score, movie, user):
     """Create and return a new rating."""
 
-    rating = Rating(score=score, movie=movie, user=user,)
+    rating = Rating(score=score, movie=movie, user=user)
 
     db.session.add(rating)
     db.session.commit()

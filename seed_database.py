@@ -37,7 +37,6 @@ for movie in movie_data:
     movies_in_db.append(db_movie)
 
 
-list_of_all_ratings_created = []
 for n in range(10):
     email = f'user{n}@test.com'  # Voila! A unique email!
     password = f'test{n}{n}'
